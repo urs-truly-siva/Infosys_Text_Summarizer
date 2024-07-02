@@ -31,7 +31,15 @@ To prepare the data for summarization, we applied several preprocessing steps:
 
 These preprocessing steps help in understanding and processing the text more effectively. The detailed preprocessing steps are demonstrated in the `preprocessing.ipynb` file.
 
+### Summarization Techniques
+
+Implemented both extractive and abstractive summarization techniques:
+- **Extractive Summarization**: Selects key sentences from the original text.
+- **Abstractive Summarization**: Generates new sentences that convey the same meaning as the original text.
+
+### Extractive Summarization:
 
 
+# Updating the REPORt......
 
 
