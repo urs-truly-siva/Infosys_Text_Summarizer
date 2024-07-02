@@ -2,7 +2,7 @@
 ## A Report On Text Summarizer Model
 ### Initial Design for the Project Work:
 
-![Initial Design Image](path/to/Initial%20Design%20Image.png)
+![Initial Design Image](<Initial Design Image.png>)
 
 
 
