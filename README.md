@@ -16,10 +16,19 @@ This project, developed as the part of Infosys Springboard internship, focuses o
 ### Methodology
 
 <b> Data Collection: </b>
-
 Initially, we searched for suitable datasets from various sources and decided to use the CNN/Daily Mail dataset. We can also easily access the CNN Daily Mail dataset using the `datasets` library in Python.
 The CNN Daily Mail dataset is used in this project for text summarization tasks. It consists of news articles and their corresponding summaries, making it an ideal dataset for training and evaluating text summarization models.
 link: [kaggle](https://www.kaggle.com/datasets/gowrishankarp/newspaper-text-summarization-cnn-dailymail/code)
+
+### Text Preprocessing
+
+To prepare the data for summarization, we applied several preprocessing steps:
+- **Lower Casing**: Converted all text to lowercase.
+- **Removing Special Characters, Numbers and Punctuations**
+- **Tokenization**: Split text into individual tokens (words).
+- **stop words removal**: Removing stop words
+
+These preprocessing steps help in understanding and processing the text more effectively. The detailed preprocessing steps are demonstrated in the `preprocessing.ipynb` file.
 
 
 
