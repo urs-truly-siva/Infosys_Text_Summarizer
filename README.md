@@ -57,7 +57,7 @@ Extractive summarization involves selecting key sentences from the original text
    - The selected sentences are concatenated to form the final summary. The order of the sentences in the summary is preserved based on their original position in the text.
 
 5. **Implementation**:
-   - Implementation is in the file 'Extractive_Text_Summarization.ipynb'
+   - Implementation is in the file `Extractive_Text_Summarization.ipynb`
 
 
 # Updating the REPORt......
