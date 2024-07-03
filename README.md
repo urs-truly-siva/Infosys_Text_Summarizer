@@ -59,6 +59,11 @@ Extractive summarization involves selecting key sentences from the original text
 5. **Implementation**:
    - Implementation is in the file `Extractive_Text_Summarization.ipynb`
 
+6. **Results**:
+   - The extractive summarization model successfully identifies and selects key sentences that represent the main points of the text.
+   -The resulting summary is concise and retains the essential information from the original document.
+**Note: No specific dataset was used for developing the extractive summarization model. The model processes and summarizes the given text directly.**
+
 
 # Updating the REPORt......
 
