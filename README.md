@@ -113,9 +113,26 @@ This product determines the relevance of the term to the document.
 6. **Results**:
    - The extractive summarization model successfully identifies and selects key sentences that represent the main points of the text.
    -The resulting summary is concise and retains the essential information from the original document.
+# Rouge Scores
+
+## Rouge-1
+- Recall: 0.5614
+- Precision: 0.5333
+- F1-Score: 0.5470
+
+## Rouge-2
+- Recall: 0.3894
+- Precision: 0.3697
+- F1-Score: 0.3793
+
+## Rouge-L
+- Recall: 0.4211
+- Precision: 0.4000
+- F1-Score: 0.4103
+
 **Note: No specific dataset was used for developing the extractive summarization model. The model processes and summarizes the given text directly.**
 
 
-# Updating the REPORt......
+# Updating the REPORT......
 
 
