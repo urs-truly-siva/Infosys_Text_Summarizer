@@ -130,6 +130,17 @@ Extractive summarization involves selecting key sentences from the original text
 **Note: No specific dataset was used for developing the extractive summarization model. The model processes and summarizes the given text directly.**
 
 
+## User Interface
+
+The application features a clean and user-friendly interface built using Streamlit. Below are screenshots of the interface:
+
+### Main Interface
+
+![Main Interface](</InterfaceFiles/interface 1.png>)
+
+### Summary Output
+
+![Main Interface](</InterfaceFiles/interface 2.png>)
 # Updating the REPORT......
 
 
