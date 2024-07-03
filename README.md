@@ -6,7 +6,7 @@
 
 # Text Summarizer
 ### Abstract:
-<p text-align: justify;> This project, developed as the part of Infosys Springboard internship, focuses on creating a Text Summarizer using Natural Language Processing (NLP) techniques. The summarizer aims to reduce the length of documents while preserving key information and meaning, making it easier for users to quickly understand the content of large texts.</p>
+<p text-align: justify;> This project, developed as the part of Infosys Springboard internship, focuses on creating a Text Summarizer using Natural Language Processing(NLP) techniques. The summarizer aims to reduce the length of documents while preserving key information and meaning, making it easier for users to quickly understand the content of large texts.</p>
 
 ### Objectives:
 - Develop an automatic text summarization tool [Both Extractive and Abstractive] using NLP.
