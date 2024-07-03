@@ -49,7 +49,7 @@ Extractive summarization involves selecting key sentences from the original text
    - **TF-IDF (Term Frequency-Inverse Document Frequency)**: This technique is used to calculate the importance of words in each sentence. The `TfidfVectorizer` from `sklearn` is utilized to convert the preprocessed sentences into a TF-IDF matrix. Each row in the matrix represents a sentence, and each column represents a unique term in the corpus.
    - **Sentence Sum Scores**: The sum of TF-IDF scores for each sentence is calculated. This sum score represents the importance of the sentence within the document.
    - **Working Of **TF-IDF**:
-  # TF-IDF (Term Frequency-Inverse Document Frequency)
+ # TF-IDF (Term Frequency-Inverse Document Frequency)
 
 ## Overview
 TF-IDF is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents. It helps in identifying words that are unique and important to a document compared to others in the collection.
@@ -59,19 +59,28 @@ TF-IDF is calculated in two main steps:
 
 ### Term Frequency (TF)
 Measures how frequently a term (word) appears in a document. It is calculated as:
-TF(t, d) = \frac{\text{Frequency of term } t \text{ in document } d}{\text{Total number of terms in } d}
+
+\[ \text{TF}(t, d) = \frac{\text{Frequency of term } t \text{ in document } d}{\text{Total number of terms in } d} \]
 
 Where \( t \) is the term and \( d \) is the document.
 
 ### Inverse Document Frequency (IDF)
 Measures how important a term is across all documents in the collection. It is calculated as:
-IDF(t) = \log\left(\frac{\text{Total number of documents}}{\text{Number of documents containing term } t}\right)
+
+\[ \text{IDF}(t) = \log\left(\frac{\text{Total number of documents}}{\text{Number of documents containing term } t}\right) \]
 
 IDF gives higher weight to terms that are rare across documents but occur frequently within a specific document.
 
 ### TF-IDF Calculation
 Finally, TF-IDF for a term \( t \) in a document \( d \) is given by:
-TF-IDF(t, d) = \text{TF}(t, d) \times \text{IDF}(t)
+
+\[ \text{TF-IDF}(t, d) = \text{TF}(t, d) \times \text{IDF}(t) \]
+
+This product determines the relevance of the term to the document.
+
+## Example Calculation
+Consider the sentence:
+
 
 
 
