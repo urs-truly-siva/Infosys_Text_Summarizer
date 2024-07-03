@@ -43,12 +43,12 @@ Implemented both extractive and abstractive summarization techniques:
 # Extractive Summarization:
 Extractive summarization involves selecting key sentences from the original text that best represent the main points of the document. Here is a detailed explanation of the extractive summarization model developed in this project:
 
-1. **Preprocessing**:
+## 1. **Preprocessing**:
    - **Text Cleaning**: The text is cleaned by removing newline characters, content within square brackets, extra spaces, and quotation marks.
    - **Tokenization**: The text is tokenized into sentences using the `nltk.sent_tokenize` function.
    - **Lemmatization and Stop Words Removal**: Using the `spacy` library, each sentence is processed to extract lemmatized words, excluding stop words and non-alphabetic tokens.
 
-2. **Sentence Scoring**:
+## 2. **Sentence Scoring**:
    - **TF-IDF (Term Frequency-Inverse Document Frequency)**: This technique is used to calculate the importance of words in each sentence. The `TfidfVectorizer` from `sklearn` is            utilized to convert the preprocessed sentences into a TF-IDF matrix. Each row in the matrix represents a sentence, and each column represents a unique term in the corpus.
    - **Sentence Sum Scores**: The sum of TF-IDF scores for each sentence is calculated. This sum score represents the importance of the sentence within the document.
    
@@ -99,17 +99,17 @@ Extractive summarization involves selecting key sentences from the original text
    | complex    | 1/9 = 0.1111 | log(1/1) = 0                                                 | 0            |
    | problems   | 1/9 = 0.1111 | log(1/1) = 0                                                 | 0            |
 
-3. **Sentence Selection**:
+## 3. **Sentence Selection**:
    - **Ranking Sentences**: Sentences are ranked based on their sum scores in descending order.
    - **Top-N Sentences**: The top-N highest-scoring sentences are selected to form the summary. In this implementation, N is set to 4, meaning the top 4 sentences are selected.
 
-4. **Summary Generation**:
+## 4. **Summary Generation**:
    - The selected sentences are concatenated to form the final summary. The order of the sentences in the summary is preserved based on their original position in the text.
 
-5. **Implementation**:
+## 5. **Implementation**:
    - Implementation is in the file `Extractive_Text_Summarization.ipynb`
 
-6. **Results**:
+## 6. **Results**:
    - The extractive summarization model successfully identifies and selects key sentences that represent the main points of the text.
    -The resulting summary is concise and retains the essential information from the original document.
    ### Rouge-1
