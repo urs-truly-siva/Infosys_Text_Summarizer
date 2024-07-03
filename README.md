@@ -49,31 +49,28 @@ Extractive summarization involves selecting key sentences from the original text
    - **TF-IDF (Term Frequency-Inverse Document Frequency)**: This technique is used to calculate the importance of words in each sentence. The `TfidfVectorizer` from `sklearn` is utilized to convert the preprocessed sentences into a TF-IDF matrix. Each row in the matrix represents a sentence, and each column represents a unique term in the corpus.
    - **Sentence Sum Scores**: The sum of TF-IDF scores for each sentence is calculated. This sum score represents the importance of the sentence within the document.
    
- ### TF-IDF (Term Frequency-Inverse Document Frequency)
+ ## TF-IDF (Term Frequency-Inverse Document Frequency)
 
 ### Overview
 TF-IDF is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents. It helps in identifying words that are unique and important to a document compared to others in the collection.
 
 ### Working of TF-IDF
-# TF-IDF (Term Frequency-Inverse Document Frequency)
-
 ### Overview
 TF-IDF is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents. It helps in identifying words that are unique and important to a document compared to others in the collection.
 
 ### Working of TF-IDF
 TF-IDF is calculated in two main steps:
 
-### Term Frequency (TF)
+1. ### Term Frequency (TF)
 Measures how frequently a term (word) appears in a document. It is calculated as:
 
-**_ TF(t, d) = Frequency of term t in document d / Total number of terms in d _**
-
+<i> ** TF(t, d) = Frequency of term t in document d / Total number of terms in d ** </i>
 Where t is the term and d is the document.
 
-### Inverse Document Frequency (IDF)
+2. ### Inverse Document Frequency (IDF)
 Measures how important a term is across all documents in the collection. It is calculated as:
 
-**_ IDF(t) = log(Total number of documents / Number of documents containing term t) _**
+<i> ** IDF(t) = log(Total number of documents / Number of documents containing term t) ** </i>
 
 IDF gives higher weight to terms that are rare across documents but occur frequently within a specific document.
 
