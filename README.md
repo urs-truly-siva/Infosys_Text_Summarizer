@@ -37,7 +37,7 @@ Implemented both extractive and abstractive summarization techniques:
 - **Extractive Summarization**: Selects key sentences from the original text.
 - **Abstractive Summarization**: Generates new sentences that convey the same meaning as the original text.
 
-## Extractive Summarization:
+# Extractive Summarization:
 Extractive summarization involves selecting key sentences from the original text that best represent the main points of the document. Here is a detailed explanation of the extractive summarization model developed in this project:
 
 1. **Preprocessing**:
@@ -51,30 +51,30 @@ Extractive summarization involves selecting key sentences from the original text
    
  ## TF-IDF (Term Frequency-Inverse Document Frequency)
 
-### Overview
+## Overview
 TF-IDF is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents. It helps in identifying words that are unique and important to a document compared to others in the collection.
 
-### Working of TF-IDF
-### Overview
+## Working of TF-IDF
+## Overview
 TF-IDF is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents. It helps in identifying words that are unique and important to a document compared to others in the collection.
 
-### Working of TF-IDF
+## Working of TF-IDF
 TF-IDF is calculated in two main steps:
 
-### 1. Term Frequency (TF)
+## 1. Term Frequency (TF)
 Measures how frequently a term (word) appears in a document. It is calculated as:
 
 <i><b> TF(t, d) = Frequency of term t in document d / Total number of terms in d ** </b></i>
 Where t is the term and d is the document.
 
-### 2. Inverse Document Frequency (IDF)
+## 2. Inverse Document Frequency (IDF)
 Measures how important a term is across all documents in the collection. It is calculated as:
 
 <i><b> IDF(t) = log(Total number of documents / Number of documents containing term t) </b></i>
 
 IDF gives higher weight to terms that are rare across documents but occur frequently within a specific document.
 
-### TF-IDF Calculation
+## TF-IDF Calculation
 Finally, TF-IDF for a term t in a document d is given by:
 
 <i><b> TF-IDF(t, d) = TF(t, d) × IDF(t) </b></i>
@@ -82,7 +82,6 @@ Finally, TF-IDF for a term t in a document d is given by:
 This product determines the relevance of the term to the document.
 
 ## Example Calculation
-Consider the sentence:
 
 "Siva is a skilled programmer who enjoys solving complex problems."
 
@@ -100,8 +99,6 @@ Consider the sentence:
 | solving    | 1/9 = 0.1111 | log(1/1) = 0                                                 | 0            |
 | complex    | 1/9 = 0.1111 | log(1/1) = 0                                                 | 0            |
 | problems   | 1/9 = 0.1111 | log(1/1) = 0                                                 | 0            |
-
-In this example, since we are assuming a single document (our sentence), the IDF for each term is 0 (log(1/1) = 0). Therefore, the TF-IDF scores are all 0. This is a simplified scenario; in a real-world application, IDF would reflect the rarity of terms across a collection of documents, highlighting the importance of terms like "Siva" relative to others.
 
 3. **Sentence Selection**:
    - **Ranking Sentences**: Sentences are ranked based on their sum scores in descending order.
