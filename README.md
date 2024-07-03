@@ -84,6 +84,7 @@ Consider the sentence:
 
 
 
+
 3. **Sentence Selection**:
    - **Ranking Sentences**: Sentences are ranked based on their sum scores in descending order.
    - **Top-N Sentences**: The top-N highest-scoring sentences are selected to form the summary. In this implementation, N is set to 4, meaning the top 4 sentences are selected.
