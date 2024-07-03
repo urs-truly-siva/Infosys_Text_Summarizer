@@ -37,6 +37,9 @@ Implemented both extractive and abstractive summarization techniques:
 - **Extractive Summarization**: Selects key sentences from the original text.
 - **Abstractive Summarization**: Generates new sentences that convey the same meaning as the original text.
 
+
+
+
 # Extractive Summarization:
 Extractive summarization involves selecting key sentences from the original text that best represent the main points of the document. Here is a detailed explanation of the extractive summarization model developed in this project:
 
@@ -51,10 +54,6 @@ Extractive summarization involves selecting key sentences from the original text
    
  ## TF-IDF (Term Frequency-Inverse Document Frequency)
 
-## Overview
-TF-IDF is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents. It helps in identifying words that are unique and important to a document compared to others in the collection.
-
-## Working of TF-IDF
 ## Overview
 TF-IDF is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents. It helps in identifying words that are unique and important to a document compared to others in the collection.
 
@@ -113,22 +112,20 @@ This product determines the relevance of the term to the document.
 6. **Results**:
    - The extractive summarization model successfully identifies and selects key sentences that represent the main points of the text.
    -The resulting summary is concise and retains the essential information from the original document.
-# Rouge Scores
+   ### Rouge-1
+   - Recall: 0.5614
+   - Precision: 0.5333
+   - F1-Score: 0.5470
 
-## Rouge-1
-- Recall: 0.5614
-- Precision: 0.5333
-- F1-Score: 0.5470
-
-## Rouge-2
-- Recall: 0.3894
-- Precision: 0.3697
-- F1-Score: 0.3793
-
-## Rouge-L
-- Recall: 0.4211
-- Precision: 0.4000
-- F1-Score: 0.4103
+   ### Rouge-2
+   - Recall: 0.3894
+   - Precision: 0.3697
+   - F1-Score: 0.3793
+   
+   ### Rouge-L
+   - Recall: 0.4211
+   - Precision: 0.4000
+   - F1-Score: 0.4103
 
 **Note: No specific dataset was used for developing the extractive summarization model. The model processes and summarizes the given text directly.**
 
