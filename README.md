@@ -61,23 +61,23 @@ TF-IDF is a statistical measure used to evaluate the importance of a word in a d
 ### Working of TF-IDF
 TF-IDF is calculated in two main steps:
 
-1. ### Term Frequency (TF)
+### 1. Term Frequency (TF)
 Measures how frequently a term (word) appears in a document. It is calculated as:
 
-<i> ** TF(t, d) = Frequency of term t in document d / Total number of terms in d ** </i>
+<i><b> TF(t, d) = Frequency of term t in document d / Total number of terms in d ** </b></i>
 Where t is the term and d is the document.
 
-2. ### Inverse Document Frequency (IDF)
+### 2. Inverse Document Frequency (IDF)
 Measures how important a term is across all documents in the collection. It is calculated as:
 
-<i> ** IDF(t) = log(Total number of documents / Number of documents containing term t) ** </i>
+<i><b> IDF(t) = log(Total number of documents / Number of documents containing term t) </b></i>
 
 IDF gives higher weight to terms that are rare across documents but occur frequently within a specific document.
 
 ### TF-IDF Calculation
 Finally, TF-IDF for a term t in a document d is given by:
 
-**_ TF-IDF(t, d) = TF(t, d) × IDF(t) _**
+<i><b> TF-IDF(t, d) = TF(t, d) × IDF(t) </b></i>
 
 This product determines the relevance of the term to the document.
 
