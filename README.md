@@ -2,7 +2,7 @@
 ## A Report On Text Summarizer Model
 ### Initial Design for the Project Work:
 
-![Initial Design Image](<design image.png>)
+![Initial Design Image](</DesignFiles/design image.png>)
 
 # Text Summarizer
 ## Abstract:
