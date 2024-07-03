@@ -64,6 +64,7 @@ Extractive summarization involves selecting key sentences from the original text
    Measures how frequently a term (word) appears in a document. It is calculated as:
    
    <i><b> `TF(t, d) = Frequency of term t in document d / Total number of terms in d` </b></i>
+   
    Where t is the term and d is the document.
    
    ## 2. Inverse Document Frequency (IDF)
