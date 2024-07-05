@@ -20,7 +20,7 @@
 The CNN Daily Mail dataset is used in this project for text summarization tasks. It consists of news articles and their corresponding summaries, making it an ideal dataset for training and evaluating text summarization models.</p>
 
 link: [kaggle](https://www.kaggle.com/datasets/gowrishankarp/newspaper-text-summarization-cnn-dailymail/code)
-
+samsum: [link](https://hf.co/datasets/samsum)
 ## Text Preprocessing:
 
 To prepare the data for summarization, we applied several preprocessing steps:
