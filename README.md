@@ -16,11 +16,14 @@
 ## Methodology:
 
 <b> Data Collection: </b>
-<p align="justify"> Initially, we searched for suitable datasets from various sources and decided to use the CNN/Daily Mail dataset. We can also easily access the CNN Daily Mail dataset using the `datasets` library in Python.
-The CNN Daily Mail dataset is used in this project for text summarization tasks. It consists of news articles and their corresponding summaries, making it an ideal dataset for training and evaluating text summarization models.</p>
+<p align="justify"> Initially, we searched for suitable datasets from various sources and decided to use the CNN/Daily Mail dataset for the preprocessing learning part. Due to its large size, we then chose the Samsum dataset for the abstractive summarization tasks.
 
-link: [kaggle](https://www.kaggle.com/datasets/gowrishankarp/newspaper-text-summarization-cnn-dailymail/code)
-samsum: [link](https://hf.co/datasets/samsum)
+- **CNN/Daily Mail Dataset**: This dataset consists of news articles and their corresponding summaries, making it ideal for training and evaluating text summarization models.
+  - [Kaggle](https://www.kaggle.com/datasets/gowrishankarp/newspaper-text-summarization-cnn-dailymail/code)
+
+- **Samsum Dataset**: This dataset is specifically used for abstractive summarization.
+  - [Samsum](https://hf.co/datasets/samsum)
+
 ## Text Preprocessing:
 
 To prepare the data for summarization, we applied several preprocessing steps:
