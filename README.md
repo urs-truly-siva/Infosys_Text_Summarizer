@@ -162,6 +162,34 @@ A tokenizer, specifically the T5Tokenizer from the pre-trained t5-small model, i
 ### T5 Tokinizer:
 - The T5 (Text-To-Text Transfer Transformer) tokenizer is designed to handle various text-to-text tasks, where both the input and output are in the form of textual sequences. It's part of the T5 model architecture, which was introduced by Google AI's team.
 
+## pre-processing
 
+### Preprocessing Function Steps
+
+1. **Input Preparation**:
+   - Combine each dialogue with a prefix "summarize: ".
+   - Example: `"summarize: " + dialogue`
+
+2. **Tokenization of Inputs**:
+   - Use the tokenizer to convert the prepared input texts into tokenized representations suitable for model input.
+   - Parameters:
+     - `max_length=512`: Limit the maximum length of input sequences to 512 tokens.
+     - `truncation=True`: Truncate sequences longer than `max_length`.
+     - `padding="max_length"`: Pad sequences shorter than `max_length` to ensure uniform input size.
+
+3. **Tokenization of Summaries**:
+   - Tokenize the summary texts to prepare them as model targets (labels).
+   - Use the tokenizer's target tokenizer context (`tokenizer.as_target_tokenizer()`) for proper label tokenization.
+   - Parameters:
+     - `max_length=150`: Limit the maximum length of summary sequences to 150 tokens.
+     - `truncation=True`: Truncate summaries longer than `max_length`.
+     - `padding="max_length"`: Pad summaries shorter than `max_length`.
+
+4. **Formatting Model Inputs**:
+   - Store the tokenized inputs and labels in a dictionary (`model_inputs`).
+   - Assign the token IDs of the labeled summaries to `"labels"` in the `model_inputs` dictionary.
+
+5. **Return**:
+   - Return `model_inputs`, which now contains tokenized inputs and corresponding labels suitable for training the model.
 
 
