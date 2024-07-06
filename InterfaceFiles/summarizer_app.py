@@ -142,4 +142,4 @@ if st.button("Summarize"):
     else:
         st.error("Please enter text to summarize.")
 
-footer()
+    footer()
