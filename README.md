@@ -162,7 +162,7 @@ A tokenizer, specifically the T5Tokenizer from the pre-trained t5-small model, i
 ### T5 Tokinizer:
 - The T5 (Text-To-Text Transfer Transformer) tokenizer is designed to handle various text-to-text tasks, where both the input and output are in the form of textual sequences. It's part of the T5 model architecture, which was introduced by Google AI's team.
 
-## pre-processing
+## **4. pre-processing:**
 
 ### Preprocessing Function Steps
 
