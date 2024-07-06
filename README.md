@@ -148,7 +148,7 @@ This project aims to build an abstractive summarization model using the T5 archi
 -We start by importing necessary libraries from the Hugging Face `transformers` library and load the Samsum dataset.
 
 ## **2. Load and Inspect Dataset:**
--The Samsum dataset is loaded, consisting of three splits: train, test, and validation. Each split contains dialogue and summary pairs used for training and evaluation purposes.
+- The Samsum dataset is loaded, consisting of three splits: train, test, and validation. Each split contains dialogue and summary pairs used for training and evaluation purposes.
 
 | Split          | Features                | Num Rows |
 |----------------|-------------------------|----------|
@@ -209,6 +209,7 @@ This project aims to build an abstractive summarization model using the T5 archi
   - **Initialization**: Initializes `Trainer` with the defined `model`, `training_args`, and datasets (`train_dataset` for training and `eval_dataset` for evaluation).
   - **Tokenizer**: Uses the specified `tokenizer` for encoding and decoding text sequences during training.
   - 5 epoch results
+  
   | Epoch | Training Loss | Validation Loss |
   |-------|---------------|-----------------|
   | 1     | 0.3803        | 0.3441          |
