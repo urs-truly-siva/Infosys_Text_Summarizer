@@ -145,10 +145,10 @@ The application features a clean and user-friendly interface built using Streaml
 This project aims to build an abstractive summarization model using the T5 architecture and the Samsum dataset. The model's objective is to summarize dialogues into concise and coherent summaries.
 
 ## **1. Initial Setup:**
-We start by importing necessary libraries from the Hugging Face `transformers` library and load the Samsum dataset.
+-We start by importing necessary libraries from the Hugging Face `transformers` library and load the Samsum dataset.
 
 ## **2. Load and Inspect Dataset:**
-The Samsum dataset is loaded, consisting of three splits: train, test, and validation. Each split contains dialogue and summary pairs used for training and evaluation purposes.
+-The Samsum dataset is loaded, consisting of three splits: train, test, and validation. Each split contains dialogue and summary pairs used for training and evaluation purposes.
 
 | Split          | Features                | Num Rows |
 |----------------|-------------------------|----------|
@@ -158,7 +158,7 @@ The Samsum dataset is loaded, consisting of three splits: train, test, and valid
 
 ## **3. Tokenizer Initialization:**
 
-A tokenizer, specifically the T5Tokenizer from the pre-trained t5-small model, is initialized to handle tokenization for both inputs (dialogues) and outputs (summaries).
+-A tokenizer, specifically the T5Tokenizer from the pre-trained t5-small model, is initialized to handle tokenization for both inputs (dialogues) and outputs (summaries).
 ### T5 Tokinizer:
 - The T5 (Text-To-Text Transfer Transformer) tokenizer is designed to handle various text-to-text tasks, where both the input and output are in the form of textual sequences. It's part of the T5 model architecture, which was introduced by Google AI's team.
 
@@ -191,5 +191,39 @@ A tokenizer, specifically the T5Tokenizer from the pre-trained t5-small model, i
 
 5. **Return**:
    - Return `model_inputs`, which now contains tokenized inputs and corresponding labels suitable for training the model.
+
+
+## **5. Load Pre-trained T5 Model:**
+- The T5ForConditionalGeneration model is loaded with the pre-trained `t5-small` weights. This model is designed for text generation tasks such as summarization.
+
+## **6. Summarization Function:**
+- A summarization function is defined to generate summaries for given texts. This function utilizes the model and tokenizer to produce summaries with specified length constraints and beam search parameters.
+
+## **7. ### Training the Model with Hugging Face Trainer:**
+
+- **Training Setup**:
+  - **Model**: Uses the `Trainer` class from Hugging Face's `transformers` library to manage model training.
+  - **Arguments**: Defined using `TrainingArguments`, specifying output directories, evaluation strategy (per epoch), learning rate, batch sizes, weight decay, epochs, and logging directories.
+
+- **Trainer Initialization**:
+  - **Initialization**: Initializes `Trainer` with the defined `model`, `training_args`, and datasets (`train_dataset` for training and `eval_dataset` for evaluation).
+  - **Tokenizer**: Uses the specified `tokenizer` for encoding and decoding text sequences during training.
+  - 5 epoch results
+    | Epoch | Training Loss | Validation Loss |
+    |-------|---------------|-----------------|
+    | 1     | 0.3803        | 0.3441          |
+    | 2     | 0.3716        | 0.3369          |
+    | 3     | 0.3636        | 0.3329          |
+    | 4     | 0.3592        | 0.3323          |
+    | 5     | 0.3607        | 0.3310          |
+## **8. Evaluate the Model:**
+- The fine-tuned model is evaluated using the ROUGE metric, which measures the quality of generated summaries compared to reference summaries. The evaluation involves generating summaries for the validation set and calculating precision, recall, and F1 scores using ROUGE-1, ROUGE-2, ROUGE-L, and ROUGE-Lsum metrics.
+## ROUGE Scores
+| Metric   | Precision | Recall   | F1-score |
+|----------|-----------|----------|----------|
+| ROUGE-1  | 0.8457    | 0.3345   | 0.4422   |
+| ROUGE-2  | 0.5563    | 0.2222   | 0.2880   |
+| ROUGE-L  | 0.7565    | 0.3064   | 0.3966   |
+| ROUGE-Lsum | 0.8323  | 0.3468   | 0.4502   |
 
 
