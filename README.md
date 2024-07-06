@@ -218,7 +218,10 @@ This project aims to build an abstractive summarization model using the T5 archi
   | 4     | 0.3592        | 0.3323          |
   | 5     | 0.3607        | 0.3310          |
 
-## **8. Evaluate the Model:**
+## **8. Implementation:**
+- you can see the implementation in the file `Abstractive_Summarizer_Model`
+
+## **9. Evaluate the Model:**
 - The fine-tuned model is evaluated using the ROUGE metric, which measures the quality of generated summaries compared to reference summaries. The evaluation involves generating summaries for the validation set and calculating precision, recall, and F1 scores using ROUGE-1, ROUGE-2, ROUGE-L, and ROUGE-Lsum metrics.
 ## Rouge Scores Abstractive Model
   | Metric   | Precision | Recall   | F1-score |
