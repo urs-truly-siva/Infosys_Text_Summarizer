@@ -246,6 +246,3 @@ This project aims to build an abstractive summarization model using the T5 archi
   - Precision: 83.23% of the LCS of words considering the length of the generated summaries matched those in the reference summaries.
   - Recall: 34.68% of the LCS of words in the reference summaries were found in the generated summaries.
   - F1-score: Focuses on the LCS of words, considering the summary length as part of the evaluation.
-
-
--------------------------------------------------------------------------------------THANK YOU---------------------------------------------------------------------------------------
