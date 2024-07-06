@@ -6,6 +6,18 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from streamlit_lottie import st_lottie
 import json
 import time
+import subprocess
+import sys
+
+def install_package(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Ensure correct numpy version
+try:
+    import numpy as np
+    assert np.__version__ == '1.23.5'
+except (ImportError, AssertionError):
+    install_package('numpy==1.23.5')
 
 def footer():
     st.markdown("""------""")
