@@ -6,8 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from streamlit_lottie import st_lottie
 import json
 import time
-import subprocess
-import sys
+import os
 
 def install_package(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
@@ -95,8 +94,11 @@ def summarize_text(text, num_sentences):
     return summary
 
 def load_lottie_file(filepath: str):
-    with open(filepath, "r") as f:
-        return json.load(f)
+    if os.path.exists(filepath):
+        with open(filepath, "r") as f:
+            return json.load(f)
+    else:
+        return None
 
 lottie_animation = load_lottie_file("summarer.json")
 ani = load_lottie_file('loading.json')
@@ -116,7 +118,10 @@ with col1:
     text_input = st.text_area("Enter the text to summarize:", height=350)
 
 with col2:
-    st_lottie(lottie_animation, height=400, key="animation")
+    if lottie_animation:
+        st_lottie(lottie_animation, height=400, key="animation")
+    else:
+        st.write("Lottie animation not found.")
 
 num_sentences = st.slider("Number of sentences in summary:", min_value=1, max_value=10, value=4)
 
@@ -130,7 +135,10 @@ if st.button("Summarize"):
         code_snippet = f'''\n{formatted_summary}\n '''
         st.code(code_snippet, language='python')
         
-        st_lottie(ani, height=300, key="ani")
+        if ani:
+            st_lottie(ani, height=300, key="ani")
+        else:
+            st.write("Lottie animation not found.")
     else:
         st.error("Please enter text to summarize.")
 
