@@ -123,7 +123,7 @@ num_sentences = st.slider("Number of sentences in summary:", min_value=1, max_va
 if st.button("Summarize"):
     if text_input:
         with st.spinner('Summarizing....'):
-            time.sleep(5) 
+            time.sleep(5)
             summary = summarize_text(text_input, num_sentences)
         st.subheader("Summary:")
         formatted_summary = "\n" + "\n".join(summary.split(". "))
