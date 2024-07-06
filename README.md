@@ -144,10 +144,10 @@ The application features a clean and user-friendly interface built using Streaml
 # Abstractive Summarization
 This project aims to build an abstractive summarization model using the T5 architecture and the Samsum dataset. The model's objective is to summarize dialogues into concise and coherent summaries.
 
-1. Initial Setup
+## **1. Initial Setup:**
 We start by importing necessary libraries from the Hugging Face `transformers` library and load the Samsum dataset.
 
-2. Load and Inspect Dataset
+## **2. Load and Inspect Dataset:**
 The Samsum dataset is loaded, consisting of three splits: train, test, and validation. Each split contains dialogue and summary pairs used for training and evaluation purposes.
 
 | Split          | Features                | Num Rows |
@@ -155,4 +155,13 @@ The Samsum dataset is loaded, consisting of three splits: train, test, and valid
 | **Train**      | ['dialogue', 'summary'] | 14732    |
 | **Test**       | ['dialogue', 'summary'] | 819      |
 | **Validation** | ['dialogue', 'summary'] | 818      |
+
+## **3. Tokenizer Initialization:**
+
+A tokenizer, specifically the T5Tokenizer from the pre-trained t5-small model, is initialized to handle tokenization for both inputs (dialogues) and outputs (summaries).
+### T5 Tokinizer:
+The T5 (Text-To-Text Transfer Transformer) tokenizer is designed to handle various text-to-text tasks, where both the input and output are in the form of textual sequences. It's part of the T5 model architecture, which was introduced by Google AI's team.
+
+
+
 
