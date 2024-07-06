@@ -160,7 +160,7 @@ The Samsum dataset is loaded, consisting of three splits: train, test, and valid
 
 A tokenizer, specifically the T5Tokenizer from the pre-trained t5-small model, is initialized to handle tokenization for both inputs (dialogues) and outputs (summaries).
 ### T5 Tokinizer:
-The T5 (Text-To-Text Transfer Transformer) tokenizer is designed to handle various text-to-text tasks, where both the input and output are in the form of textual sequences. It's part of the T5 model architecture, which was introduced by Google AI's team.
+- The T5 (Text-To-Text Transfer Transformer) tokenizer is designed to handle various text-to-text tasks, where both the input and output are in the form of textual sequences. It's part of the T5 model architecture, which was introduced by Google AI's team.
 
 
 
