@@ -117,11 +117,12 @@ Extractive summarization involves selecting key sentences from the original text
    - The extractive summarization model successfully identifies and selects key sentences that represent the main points of the text.
    -The resulting summary is concise and retains the essential information from the original document.
    # Rouge Scores for Extractive Model
-   | Metric     | Recall | Precision | F1-Score |
-    |------------|--------|-----------|----------|
-    | **ROUGE-1** | 0.5614 | 0.5333    | 0.5470   |
-    | **ROUGE-2** | 0.3894 | 0.3697    | 0.3793   |
-    | **ROUGE-L** | 0.4211 | 0.4000    | 0.4103   |
+   
+   | Metric      | Recall | Precision | F1-Score |
+   |-------------|--------|-----------|----------|
+   | **ROUGE-1** | 0.5614 | 0.5333    | 0.5470   |
+   | **ROUGE-2** | 0.3894 | 0.3697    | 0.3793   |
+   | **ROUGE-L** | 0.4211 | 0.4000    | 0.4103   |
 
 
 **Note: No specific dataset was used for developing the extractive summarization model. The model processes and summarizes the given text directly.**
