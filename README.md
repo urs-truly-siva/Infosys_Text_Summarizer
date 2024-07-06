@@ -141,4 +141,17 @@ The application features a clean and user-friendly interface built using Streaml
 ![Main Interface](</InterfaceFiles/interface 2.png>)
 
 
+# Abstractive Summarization
+This project aims to build an abstractive summarization model using the T5 architecture and the Samsum dataset. The model's objective is to summarize dialogues into concise and coherent summaries.
+
+1. Initial Setup
+We start by importing necessary libraries from the Hugging Face `transformers` library and load the Samsum dataset.
+
+2. Load and Inspect Dataset
+The Samsum dataset is loaded, consisting of three splits: train, test, and validation. Each split contains dialogue and summary pairs used for training and evaluation purposes.
+| Split       | Features            | Num Rows |
+|-------------|---------------------|----------|
+| **Train**   | ['dialogue', 'summary'] | 14732    |
+| **Test**    | ['dialogue', 'summary'] | 819      |
+| **Validation** | ['dialogue', 'summary'] | 818      |
 
