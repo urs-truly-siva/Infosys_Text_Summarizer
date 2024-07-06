@@ -8,21 +8,16 @@ import json
 import time
 
 def footer():
-    # Footer Section
-
     st.markdown("""------""")
     st.markdown("""
-        <p  
-        align='center'>Developed by </p>
+        <p align='center'>Developed by </p>
         """, unsafe_allow_html=True)
     st.markdown("""
-        <p  
-        align='center'>Avanigadda Sivayya</p>
+        <p align='center'>Avanigadda Sivayya</p>
         """, unsafe_allow_html=True)
 
-   
     st.markdown(""" 
-        <p align="center">If you want any assistances or have any  queries. just, feel free to reach out!</p>
+        <p align="center">If you want any assistances or have any queries, just feel free to reach out!</p>
         
         <p align="center">
         <a href="https://www.linkedin.com/in/siva-avanigadda/" target="_blank">
@@ -42,11 +37,19 @@ def footer():
 
     st.markdown("""  <p align="center"> - Siva620..🤘🏻</p>""", unsafe_allow_html=True)
 
+st.set_page_config(page_title="TextSummarizer 📄✨", page_icon="📚", layout="wide")
 
+@st.cache_resource
+def load_spacy_model():
+    try:
+        nlp = spacy.load("en_core_web_sm")
+    except OSError:
+        from spacy.cli import download
+        download("en_core_web_sm")
+        nlp = spacy.load("en_core_web_sm")
+    return nlp
 
-st.set_page_config(page_title="TextSummarizer 📄✨", page_icon="📚", layout="wide",)
-
-nlp = spacy.load("en_core_web_sm")
+nlp = load_spacy_model()
 
 nltk.download('punkt')
 
@@ -59,32 +62,21 @@ def preprocess(sentences):
     return preprocessed_sentences
 
 def summarize_text(text, num_sentences):
-    # Preprocess text
     text = re.sub(r'\([^)]*\)', ' ', text)
     text = re.sub(r'\[[^\]]*\]', ' ', text)
     text = re.sub(r' +', ' ', text)
     text = re.sub(r'"', '', text)
 
-    # Tokenize into sentences
     original_sentences = nltk.sent_tokenize(text)
-
-    # Preprocess sentences
     preprocessed_sentences = preprocess(original_sentences)
 
-    # TF-IDF Vectorization
     vectorizer = TfidfVectorizer()
     matrix = vectorizer.fit_transform(preprocessed_sentences)
 
-    # Sum TF-IDF scores for each sentence
     sum_scores = matrix.toarray().sum(axis=1)
-
-    # Rank sentences by score
     ranked_scores = (-sum_scores).argsort()
-
-    # Get top sentence indices
     top_score_indices = sorted(ranked_scores[:num_sentences])
 
-    # Generate final summary
     final_sentences = [original_sentences[i] for i in top_score_indices]
     summary = " ".join(final_sentences)
 
@@ -94,12 +86,9 @@ def load_lottie_file(filepath: str):
     with open(filepath, "r") as f:
         return json.load(f)
 
-# Load Lottie animation
 lottie_animation = load_lottie_file("summarer.json")
 ani = load_lottie_file('loading.json')
 
-
-#st.title("🧠 TextBrief: AI Summarization Assistant📄🤖")
 st.markdown(
     """
     <div style="display:flex; justify-content:center; align-items:center;">
@@ -109,8 +98,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-#text_input = st.text_area("Enter the text to summarize:")
-#num_sentences = st.slider("Number of sentences in summary:", min_value=1, max_value=10, value=4)
 col1, col2 = st.columns([2, 1])
 
 with col1:
@@ -121,14 +108,12 @@ with col2:
 
 num_sentences = st.slider("Number of sentences in summary:", min_value=1, max_value=10, value=4)
 
-
 if st.button("Summarize"):
     if text_input:
         with st.spinner('Summarizing....'):
             time.sleep(5) 
             summary = summarize_text(text_input, num_sentences)
         st.subheader("Summary:")
-        #st.write(summary)
         formatted_summary = "\n" + "\n".join(summary.split(". "))
         code_snippet = f'''\n{formatted_summary}\n '''
         st.code(code_snippet, language='python')
@@ -137,7 +122,4 @@ if st.button("Summarize"):
     else:
         st.error("Please enter text to summarize.")
 
-    footer()
-
-
-
+footer()
