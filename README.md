@@ -117,7 +117,7 @@ Extractive summarization involves selecting key sentences from the original text
    - The extractive summarization model successfully identifies and selects key sentences that represent the main points of the text.
    -The resulting summary is concise and retains the essential information from the original document.
    # Rouge Scores for Extractive Model
-    | Metric     | Recall | Precision | F1-Score |
+   | Metric     | Recall | Precision | F1-Score |
     |------------|--------|-----------|----------|
     | **ROUGE-1** | 0.5614 | 0.5333    | 0.5470   |
     | **ROUGE-2** | 0.3894 | 0.3697    | 0.3793   |
@@ -215,9 +215,10 @@ This project aims to build an abstractive summarization model using the T5 archi
   | 3     | 0.3636        | 0.3329          |
   | 4     | 0.3592        | 0.3323          |
   | 5     | 0.3607        | 0.3310          |
+
 ## **8. Evaluate the Model:**
 - The fine-tuned model is evaluated using the ROUGE metric, which measures the quality of generated summaries compared to reference summaries. The evaluation involves generating summaries for the validation set and calculating precision, recall, and F1 scores using ROUGE-1, ROUGE-2, ROUGE-L, and ROUGE-Lsum metrics.
-## ROUGE Scores
+## Rouge Scores Abstractive Model
   | Metric   | Precision | Recall   | F1-score |
   |----------|-----------|----------|----------|
   | ROUGE-1  | 0.8457    | 0.3345   | 0.4422   |
@@ -225,20 +226,20 @@ This project aims to build an abstractive summarization model using the T5 archi
   | ROUGE-L  | 0.7565    | 0.3064   | 0.3966   |
   | ROUGE-Lsum | 0.8323  | 0.3468   | 0.4502   |
   ## ROUGE-1:
-    - Precision: 84.57% of the words/phrases in the generated summaries were also found in the reference summaries.
-    - Recall: 33.45% of the words/phrases in the reference summaries were present in the generated summaries.
-    - F1-score: A balanced measure (harmonic mean) of precision and recall, indicating overall effectiveness in capturing key content from the reference summaries.
+  - Precision: 84.57% of the words/phrases in the generated summaries were also found in the reference summaries.
+  - Recall: 33.45% of the words/phrases in the reference summaries were present in the generated summaries.
+  - F1-score: A balanced measure (harmonic mean) of precision and recall, indicating overall effectiveness in capturing key content from the reference summaries.
   ## ROUGE-2:
-    - Precision: 55.63% of the bigrams (pairs of words) in the generated summaries matched those in the reference summaries.
-    - Recall: 22.22% of the bigrams in the reference summaries were found in the generated summaries.
-    - F1-score: Similar to ROUGE-1, this score assesses the quality of bigram overlap between generated and reference summaries.
+  - Precision: 55.63% of the bigrams (pairs of words) in the generated summaries matched those in the reference summaries.
+  - Recall: 22.22% of the bigrams in the reference summaries were found in the generated summaries.
+  - F1-score: Similar to ROUGE-1, this score assesses the quality of bigram overlap between generated and reference summaries.
   ## ROUGE-L:
-    - Precision: 75.65% of the longest common subsequences (LCS) of words between the generated and reference summaries matched.
-    - Recall: 30.64% of the LCS in the reference summaries were present in the generated summaries.
-    - F1-score: Evaluates the LCS overlap, emphasizing the importance of maintaining sequence order in summarization.
+  - Precision: 75.65% of the longest common subsequences (LCS) of words between the generated and reference summaries matched.
+  - Recall: 30.64% of the LCS in the reference summaries were present in the generated summaries.
+  - F1-score: Evaluates the LCS overlap, emphasizing the importance of maintaining sequence order in summarization.
   ## ROUGE-Lsum:
-    - Precision: 83.23% of the LCS of words considering the length of the generated summaries matched those in the reference summaries.
-    - Recall: 34.68% of the LCS of words in the reference summaries were found in the generated summaries.
-    - F1-score: Focuses on the LCS of words, considering the summary length as part of the evaluation.
+  - Precision: 83.23% of the LCS of words considering the length of the generated summaries matched those in the reference summaries.
+  - Recall: 34.68% of the LCS of words in the reference summaries were found in the generated summaries.
+  - F1-score: Focuses on the LCS of words, considering the summary length as part of the evaluation.
 
 
