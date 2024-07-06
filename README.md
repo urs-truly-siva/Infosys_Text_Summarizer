@@ -116,13 +116,12 @@ Extractive summarization involves selecting key sentences from the original text
 ## 6. **Results**:
    - The extractive summarization model successfully identifies and selects key sentences that represent the main points of the text.
    -The resulting summary is concise and retains the essential information from the original document.
-   # ROUGE Scores
-
-| Metric     | Recall | Precision | F1-Score |
-|------------|--------|-----------|----------|
-| **ROUGE-1** | 0.5614 | 0.5333    | 0.5470   |
-| **ROUGE-2** | 0.3894 | 0.3697    | 0.3793   |
-| **ROUGE-L** | 0.4211 | 0.4000    | 0.4103   |
+   # Rouge Scores for Extractive Model
+    | Metric     | Recall | Precision | F1-Score |
+    |------------|--------|-----------|----------|
+    | **ROUGE-1** | 0.5614 | 0.5333    | 0.5470   |
+    | **ROUGE-2** | 0.3894 | 0.3697    | 0.3793   |
+    | **ROUGE-L** | 0.4211 | 0.4000    | 0.4103   |
 
 
 **Note: No specific dataset was used for developing the extractive summarization model. The model processes and summarizes the given text directly.**
@@ -199,7 +198,7 @@ This project aims to build an abstractive summarization model using the T5 archi
 ## **6. Summarization Function:**
 - A summarization function is defined to generate summaries for given texts. This function utilizes the model and tokenizer to produce summaries with specified length constraints and beam search parameters.
 
-## **7. ### Training the Model with Hugging Face Trainer:**
+## **7. Training the Model with Hugging Face Trainer:**
 
 - **Training Setup**:
   - **Model**: Uses the `Trainer` class from Hugging Face's `transformers` library to manage model training.
@@ -209,21 +208,37 @@ This project aims to build an abstractive summarization model using the T5 archi
   - **Initialization**: Initializes `Trainer` with the defined `model`, `training_args`, and datasets (`train_dataset` for training and `eval_dataset` for evaluation).
   - **Tokenizer**: Uses the specified `tokenizer` for encoding and decoding text sequences during training.
   - 5 epoch results
-    | Epoch | Training Loss | Validation Loss |
-    |-------|---------------|-----------------|
-    | 1     | 0.3803        | 0.3441          |
-    | 2     | 0.3716        | 0.3369          |
-    | 3     | 0.3636        | 0.3329          |
-    | 4     | 0.3592        | 0.3323          |
-    | 5     | 0.3607        | 0.3310          |
+  | Epoch | Training Loss | Validation Loss |
+  |-------|---------------|-----------------|
+  | 1     | 0.3803        | 0.3441          |
+  | 2     | 0.3716        | 0.3369          |
+  | 3     | 0.3636        | 0.3329          |
+  | 4     | 0.3592        | 0.3323          |
+  | 5     | 0.3607        | 0.3310          |
 ## **8. Evaluate the Model:**
 - The fine-tuned model is evaluated using the ROUGE metric, which measures the quality of generated summaries compared to reference summaries. The evaluation involves generating summaries for the validation set and calculating precision, recall, and F1 scores using ROUGE-1, ROUGE-2, ROUGE-L, and ROUGE-Lsum metrics.
 ## ROUGE Scores
-| Metric   | Precision | Recall   | F1-score |
-|----------|-----------|----------|----------|
-| ROUGE-1  | 0.8457    | 0.3345   | 0.4422   |
-| ROUGE-2  | 0.5563    | 0.2222   | 0.2880   |
-| ROUGE-L  | 0.7565    | 0.3064   | 0.3966   |
-| ROUGE-Lsum | 0.8323  | 0.3468   | 0.4502   |
+  | Metric   | Precision | Recall   | F1-score |
+  |----------|-----------|----------|----------|
+  | ROUGE-1  | 0.8457    | 0.3345   | 0.4422   |
+  | ROUGE-2  | 0.5563    | 0.2222   | 0.2880   |
+  | ROUGE-L  | 0.7565    | 0.3064   | 0.3966   |
+  | ROUGE-Lsum | 0.8323  | 0.3468   | 0.4502   |
+  ## ROUGE-1:
+    - Precision: 84.57% of the words/phrases in the generated summaries were also found in the reference summaries.
+    - Recall: 33.45% of the words/phrases in the reference summaries were present in the generated summaries.
+    - F1-score: A balanced measure (harmonic mean) of precision and recall, indicating overall effectiveness in capturing key content from the reference summaries.
+  ## ROUGE-2:
+    - Precision: 55.63% of the bigrams (pairs of words) in the generated summaries matched those in the reference summaries.
+    - Recall: 22.22% of the bigrams in the reference summaries were found in the generated summaries.
+    - F1-score: Similar to ROUGE-1, this score assesses the quality of bigram overlap between generated and reference summaries.
+  ## ROUGE-L:
+    - Precision: 75.65% of the longest common subsequences (LCS) of words between the generated and reference summaries matched.
+    - Recall: 30.64% of the LCS in the reference summaries were present in the generated summaries.
+    - F1-score: Evaluates the LCS overlap, emphasizing the importance of maintaining sequence order in summarization.
+  ## ROUGE-Lsum:
+    - Precision: 83.23% of the LCS of words considering the length of the generated summaries matched those in the reference summaries.
+    - Recall: 34.68% of the LCS of words in the reference summaries were found in the generated summaries.
+    - F1-score: Focuses on the LCS of words, considering the summary length as part of the evaluation.
 
 
