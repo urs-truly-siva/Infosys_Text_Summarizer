@@ -150,7 +150,7 @@ This project aims to build an abstractive summarization model using the T5 archi
 ## **2. Load and Inspect Dataset:**
 - The Samsum dataset is loaded, consisting of three splits: train, test, and validation. Each split contains dialogue and summary pairs used for training and evaluation purposes.
 
-| Split          | Features                | Num Rows |
+|  Split        | Features                | Num Rows |
 |----------------|-------------------------|----------|
 | **Train**      | ['dialogue', 'summary'] | 14732    |
 | **Test**       | ['dialogue', 'summary'] | 819      |
