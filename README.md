@@ -128,19 +128,6 @@ Extractive summarization involves selecting key sentences from the original text
 **Note: No specific dataset was used for developing the extractive summarization model. The model processes and summarizes the given text directly.**
 
 
-## User Interface
-
-The application features a clean and user-friendly interface built using Streamlit. Below are screenshots of the interface:
-
-### Main Interface
-
-![Main Interface](</InterfaceFiles/interface 1.png>)
-
-### Summary Output
-
-![Main Interface](</InterfaceFiles/interface 2.png>)
-
-
 # Abstractive Summarization
 This project aims to build an abstractive summarization model using the T5 architecture and the Samsum dataset. The model's objective is to summarize dialogues into concise and coherent summaries.
 
@@ -246,3 +233,20 @@ This project aims to build an abstractive summarization model using the T5 archi
   - Precision: 83.23% of the LCS of words considering the length of the generated summaries matched those in the reference summaries.
   - Recall: 34.68% of the LCS of words in the reference summaries were found in the generated summaries.
   - F1-score: Focuses on the LCS of words, considering the summary length as part of the evaluation.
+
+
+## User Interface
+
+The application features a clean and user-friendly interface built using Streamlit. Below are screenshots of the interface:
+This application is deployed in the streamlit cloud you can access by the below link
+[Text Summarizer Application]([https://hf.co/datasets/samsum](https://infosys-springboard-text-summarizer-siva620.streamlit.app/))
+
+### Main Interface
+
+![Main Interface](</InterfaceFiles/interface 1.png>)
+
+### Summary Output
+
+![Main Interface](</InterfaceFiles/interface 2.png>)
+
+
