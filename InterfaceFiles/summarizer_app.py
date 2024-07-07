@@ -21,32 +21,32 @@ except (ImportError, AssertionError):
 def footer():
     st.markdown("""------""")
     st.markdown("""
-        <p align='center'>Developed by </p>
+        <p>🚀 Developed by Avanigadda Sivayya </p>
         """, unsafe_allow_html=True)
-    st.markdown("""
-        <p align='center'>Avanigadda Sivayya</p>
-        """, unsafe_allow_html=True)
-
+    
     st.markdown(""" 
-        <p align="center">If you want any assistances or have any queries, just feel free to reach out!</p>
+        <p>🌟 Let's connect and collaborate! </p>
         
-        <p align="center">
+        <p>
         <a href="https://www.linkedin.com/in/siva-avanigadda/" target="_blank">
-            <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn" style="width:40px;"/>
+            <img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn" style="width:20px;"/>
+            LinkedIn
         </a>
-        
+        <br>
         <a href="mailto:sivaavanigadda620@gmail.com" target="_blank">
-            <img src="https://img.icons8.com/fluent/48/000000/gmail.png" alt="GitHub" style="width:40px;"/>
+            <img src="https://img.icons8.com/fluent/48/000000/gmail.png" alt="Gmail" style="width:20px;"/>
+            Gmail
         </a>
-
-        <a href="https://www.instagram.com/urs_truly_.siva/">
-            <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" style="width: 40px;">
+        <br>
+        <a href="https://www.instagram.com/urs_truly_.siva/" target="_blank">
+            <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" style="width:20px;"/>
+            Instagram
         </a>
-
         </p>
     """, unsafe_allow_html=True)
+    
+    st.markdown("""  <p> - Siva620 ✨🤘🏻</p>""", unsafe_allow_html=True)
 
-    st.markdown("""  <p align="center"> - Siva620..🤘🏻</p>""", unsafe_allow_html=True)
 
 st.set_page_config(page_title="TextSummarizer 📄✨", page_icon="📚", layout="wide")
 
@@ -134,6 +134,7 @@ if st.button("Summarize"):
         formatted_summary = "\n" + "\n".join(summary.split(". "))
         code_snippet = f'''\n{formatted_summary}\n '''
         st.code(code_snippet, language='python')
+        footer()
         
         if ani:
             st_lottie(ani, height=300, key="ani")
@@ -142,4 +143,4 @@ if st.button("Summarize"):
     else:
         st.error("Please enter text to summarize.")
 
-    footer()
+   
