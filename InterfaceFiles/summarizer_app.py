@@ -7,6 +7,8 @@ from streamlit_lottie import st_lottie
 import json
 import time
 import os
+import subprocess
+import sys
 
 def install_package(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
@@ -21,11 +23,11 @@ except (ImportError, AssertionError):
 def footer():
     st.markdown("""------""")
     st.markdown("""
-        <p>🚀 Developed by Avanigadda Sivayya </p>
+        <p>🚀 Developed by Avanigadda Sivayya 🚀</p>
         """, unsafe_allow_html=True)
     
     st.markdown(""" 
-        <p>🌟 Let's connect and collaborate! </p>
+        <p>🌟 Let's connect and collaborate! 🌟</p>
         
         <p>
         <a href="https://www.linkedin.com/in/siva-avanigadda/" target="_blank">
@@ -45,8 +47,7 @@ def footer():
         </p>
     """, unsafe_allow_html=True)
     
-    st.markdown("""  <p> - Siva620 ✨🤘🏻</p>""", unsafe_allow_html=True)
-
+    st.markdown("""<p> - Siva620 ✨🤘🏻</p>""", unsafe_allow_html=True)
 
 st.set_page_config(page_title="TextSummarizer 📄✨", page_icon="📚", layout="wide")
 
@@ -100,8 +101,8 @@ def load_lottie_file(filepath: str):
     else:
         return None
 
-lottie_animation = load_lottie_file("summarer.json")
-ani = load_lottie_file('loading.json')
+lottie_animation = load_lottie_file(os.path.join("InterfaceFiles", "summarer.json"))
+ani = load_lottie_file(os.path.join("InterfaceFiles", "loading.json"))
 
 st.markdown(
     """
@@ -134,8 +135,7 @@ if st.button("Summarize"):
         formatted_summary = "\n" + "\n".join(summary.split(". "))
         code_snippet = f'''\n{formatted_summary}\n '''
         st.code(code_snippet, language='python')
-        footer()
-        
+
         if ani:
             st_lottie(ani, height=300, key="ani")
         else:
@@ -143,4 +143,4 @@ if st.button("Summarize"):
     else:
         st.error("Please enter text to summarize.")
 
-   
+footer()
