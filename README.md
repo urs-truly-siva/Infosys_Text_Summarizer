@@ -239,7 +239,7 @@ This project aims to build an abstractive summarization model using the T5 archi
 
 The application features a clean and user-friendly interface built using Streamlit. Below are screenshots of the interface:
 This application is deployed in the streamlit cloud you can access by the below link
-  - [Text Summarizer Application](https://infosys-springboard-text-summarizer-siva620.streamlit.app/)
+  - [Text Summarizer Application](https://infosys-springboard-summarizer-siva620.streamlit.app/)
 
 ### Main Interface
 
