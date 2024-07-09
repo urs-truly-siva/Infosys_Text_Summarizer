@@ -135,7 +135,7 @@ if st.button("Summarize"):
         formatted_summary = "\n" + "\n".join(summary.split(". "))
         code_snippet = f'''\n{formatted_summary}\n '''
         st.code(code_snippet, language='python')
-        footer()
+        #footer()
         
         if ani:
             st_lottie(ani, height=300, key="ani")
