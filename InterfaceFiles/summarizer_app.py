@@ -128,20 +128,20 @@ num_sentences = st.slider("Number of sentences in summary:", min_value=1, max_va
 
 if st.button("Summarize"):
     if text_input:
-        with st.spinner('Summarizing....'):
-            time.sleep(5)
-            summary = summarize_text(text_input, num_sentences)
-        st.subheader("Summary:")
-        formatted_summary = "\n" + "\n".join(summary.split(". "))
-        code_snippet = f'''\n{formatted_summary}\n '''
-        st.code(code_snippet, language='python')
-        #footer()
-        
-        if ani:
-            st_lottie(ani, height=300, key="ani")
+        if text_input.isdigit():
+            st.error("Please enter text, not just numbers.")
         else:
-            st.write("Lottie animation not found.")
+            with st.spinner('Summarizing....'):
+                time.sleep(5)
+                summary = summarize_text(text_input, num_sentences)
+            st.subheader("Summary:")
+            formatted_summary = "\n" + "\n".join(summary.split(". "))
+            code_snippet = f'''\n{formatted_summary}\n '''
+            st.code(code_snippet, language='python')
+            
+            if ani:
+                st_lottie(ani, height=300, key="ani")
+            else:
+                st.write("Lottie animation not found.")
     else:
         st.error("Please enter text to summarize.")
-
-    
