@@ -145,3 +145,4 @@ if st.button("Summarize"):
                 st.write("Lottie animation not found.")
     else:
         st.error("Please enter text to summarize.")
+    footer()
